@@ -39,7 +39,7 @@ const main = async () => {
         }
         else if(choice === 'Add a Role'){
             await addRole();
-            console.log('\nRole Added!')
+            console.log('\Role Added!')
             pause(1500);
         }
         else if(choice === 'Add an Employee'){
@@ -53,9 +53,6 @@ const main = async () => {
             pause(1500);
         }
     }
-
-    console.log ('Bye!');
-    process.exit()
 }
 
 // Main questions for loop
