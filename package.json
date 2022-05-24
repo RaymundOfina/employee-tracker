@@ -7,15 +7,15 @@
 
     "repository": {
       "type": "git",
-      "url": ""
+      "url": " https://raymundofina.github.io/employee-tracker/"
     },
     "keywords": [],
-    "author": "",
+    "author": " Raymund Ofina",
     "license": "ISC",
     "bugs": {
       "url": ""
     },
-    "homepage": "",
+    "homepage": "https://github.com/RaymundOfina/employee-tracker",
     "dependencies": {
       "console.table": "^0.10.0",
       "dotenv": "^16.0.0",
