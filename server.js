@@ -67,7 +67,8 @@ function viewEmployee() {
   console.log("Viewing employees\n");
 
   var query =
-    `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
+    `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, 
+    ' ', m.last_name) AS manager
   FROM employee e
   LEFT JOIN role r
 	ON e.role_id = r.id
@@ -80,7 +81,6 @@ function viewEmployee() {
     if (err) throw err;
 
     console.table(res);
-    console.log("Employees viewed!\n");
 
     firstPrompt();
   });
@@ -108,7 +108,6 @@ function viewEmployeeByDepartment() {
     }));
 
     console.table(res);
-    console.log("Department view succeed!\n");
 
     promptDepartment(departmentChoices);
   });
@@ -128,7 +127,6 @@ function promptDepartment(departmentChoices) {
       }
     ])
     .then(function (answer) {
-      console.log("answer ", answer.departmentId);
 
       var query =
         `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department 
@@ -167,7 +165,6 @@ function addEmployee() {
     }));
 
     console.table(res);
-    console.log("RoleToInsert!");
 
     promptInsert(roleChoices);
   });
@@ -210,8 +207,7 @@ function promptInsert(roleChoices) {
           if (err) throw err;
 
           console.table(res);
-          console.log(res.insertedRows + "Inserted successfully!\n");
-
+          
           firstPrompt();
         });
      
@@ -261,7 +257,6 @@ function promptDelete(deleteEmployeeChoices) {
         if (err) throw err;
 
         console.table(res);
-        console.log(res.affectedRows + "Deleted!\n");
 
         firstPrompt();
       });
@@ -296,7 +291,6 @@ function employeeArray() {
     }));
 
     console.table(res);
-    console.log("employeeArray To Update!\n")
 
     roleArray(employeeChoices);
   });
@@ -318,7 +312,6 @@ function roleArray(employeeChoices) {
     }));
 
     console.table(res);
-    console.log("roleArray to Update!\n")
 
     promptEmployeeRole(employeeChoices, roleChoices);
   });
@@ -410,7 +403,7 @@ function promptAddRole(departmentChoices) {
     ])
     .then(function (answer) {
 
-      var query = `INSERT INTO role SET ?`
+      var query = ``
 
       connection.query(query, {
         title: answer.title,
