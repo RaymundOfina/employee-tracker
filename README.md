@@ -63,5 +63,3 @@ As the image illustrates, your schema should contain the following three tables:
 
   * `manager_id`: `INT` to hold reference to another employee that is the manager of the current employee (`null` if the employee has no manager)
 
-
- https://raymundofina.github.io/employee-tracker/
